@@ -1,0 +1,28 @@
+{
+  "user": [
+    {
+      "id": 10000,
+      "name": "haoshu",
+      "password": "123456",
+      "email": "zhanghs_eternal@hotmail.com"
+    },
+    {
+      "name": "eternal",
+      "password": "123456",
+      "email": "123@qq.com",
+      "id": 10001
+    },
+    {
+      "name": "www",
+      "password": "wwww",
+      "email": "2394@qq.com",
+      "id": 10002
+    },
+    {
+      "name": "222",
+      "password": "222",
+      "email": "1111@qq.com",
+      "id": 10003
+    }
+  ]
+}
