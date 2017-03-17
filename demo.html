@@ -26,14 +26,14 @@
     getInitialState: function() {
       return {
         data: [
-          {"id": "0001", "task":"sleep", "complete": "false"},
-          {"id": "0002", "task":"睡觉", "complete": "false"},
-          {"id": "0003", "task":"打豆豆", "complete": "true"},
+          {"id": "0001", "task":"361 project", "complete": "false"},
+          {"id": "0002", "task":"demo", "complete": "false"},
+          {"id": "0003", "task":"test", "complete": "false"},
         ]
       };
     },
 
-    // 根据id删除一项任务
+    // delete one task by ID
     handleTaskDelete: function(taskId) {
       var data = this.state.data;
       data = data.filter(function(task) {
@@ -42,7 +42,7 @@
       this.setState({data});
     },
 
-    // 切换一项任务的完成状态
+    // update the state of one task
     handleToggleComplete: function(taksId) {
       var data = this.state.data;
       for(var i in data) {
@@ -54,12 +54,12 @@
       this.setState({data});
     },
 
-    // 给新增的任务一个随机的id
+    // give a random id of new item
     generateId: function() {
       return Math.floor(Math.random() * 9000) + 1000;
     },
 
-    // 新增一项任务
+    // create a new task
     handleSubmit: function(task) {
       var data = this.state.data;
       var id = this.generateId();
@@ -70,7 +70,7 @@
 
     render: function() {
       var statistics = {
-        // 统计任务总数及完成的数量
+        // count the sum of tasks and finshed ones
         todoCount: this.state.data.length || 0,
         todoCompleteCount: this.state.data.filter(function(item) {
           return item.complete === "true";
@@ -123,7 +123,7 @@
       this.props.deleteTask(this.props.taskId);
     },
 
-    // 鼠标移入显示删除按钮
+    // show the delete buttom when mouse moving on the task
     handleMouseOver: function() {
       ReactDOM.findDOMNode(this.refs.deleteBtn).style.display = "inline";
     },
@@ -151,7 +151,7 @@
           <input type="checkbox" checked={itemChecked} onChange={this.toggleComplete} className="pull-left" />
           {task}
           <div className="pull-right">
-            <button type="button" className="btn btn-xs close" onClick={this.deleteTask} ref="deleteBtn">删除</button>
+            <button type="button" className="btn btn-xs close" onClick={this.deleteTask} ref="deleteBtn">delete</button>
           </div>
         </li>
       );
@@ -161,7 +161,8 @@
   var TodoFooter = React.createClass({
     render: function() {
       return (
-        <li className="list-group-item">{this.props.todoCompleteCount}已完成 / {this.props.todoCount}总数</li>
+       <li className="list-group-item">{this.props.todoCompleteCount}Finshed/ {this.props.todoCount}Sum</li>
+      //  <button type="submit">login</button>
       )
     }
   });
@@ -185,12 +186,12 @@
             <div className="form-group">
               <label for="task" className="col-md-2 control-label">Task</label>
               <div className="col-md-10">
-                <input type="text" id="task" ref="task" className="form-control" placeholder="你想做点什么"></input>
+                <input type="text" id="task" ref="task" className="form-control" placeholder="add a task to your list"></input>
               </div>
             </div>
             <div className="row">
               <div className="col-md-12 text-right">
-                <input type="submit" value="Save Task" className="btn btn-primary" />
+                <input type="submit" value="Submit" className="btn btn-primary" />
               </div>
             </div>
           </form>
