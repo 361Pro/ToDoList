@@ -1,0 +1,14 @@
+The interface looks fine
+Can add tasks into the list
+Can set the deadline into every task
+Can add task without the deadline
+The task cannot add to the list if task is empty and user only set time
+Can complete tasks
+There is a cross line on the complete tasks
+Can reset the tasks condition to be incomplete
+Show “Delete” button when the mouse flow to the task
+Can delete tasks
+Can calculate the total amount of tasks
+Can calculate the amount of tasks that has been completed
+Can jump to the add account site
+User can do registration
